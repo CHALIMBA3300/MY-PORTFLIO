@@ -1,23 +1,12 @@
 import type { NextConfig } from "next";
+import { basePath } from "./lib/basePath";
 
-const isGithubActions = process.env.GITHUB_ACTIONS === "true";
-
-let basePath = "";
-let assetPrefix = "";
-
-if (isGithubActions && process.env.GITHUB_REPOSITORY) {
-  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, "");
-  basePath = `/${repo}`;
-  assetPrefix = `/${repo}/`;
-}
+const assetPrefix = basePath ? `${basePath}/` : "";
 
 const nextConfig: NextConfig = {
   output: "export",
   basePath,
   assetPrefix,
-  env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
-  },
   images: {
     unoptimized: true,
   },

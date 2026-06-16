@@ -4,8 +4,7 @@ import Greeting from "@/components/Greeting";
 import ScrollFade from "@/components/ScrollFade";
 import ContactForm from "@/components/ContactForm";
 import styles from "./page.module.css";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+import { basePath } from "@/lib/basePath";
 
 export default function Home() {
   return (
