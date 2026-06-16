@@ -3,11 +3,20 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "live-server --port=8000",
-    "build": "tsc main.ts --target es2017"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "devDependencies": {
-    "live-server": "^1.2.2",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "next": "^16.2.9",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
   }
 }

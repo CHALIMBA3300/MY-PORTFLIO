@@ -1,0 +1,180 @@
+.nav {
+    background: color-mix(in srgb, var(--surface) 80%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.brand {
+    color: var(--text);
+    font-weight: 700;
+    font-size: 1.05em;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+}
+.nav > .inner > ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 0 auto;
+    padding: 0;
+}
+.nav > .inner > ul li {
+    position: relative;
+}
+.nav > .inner > ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95em;
+    transition: color 0.15s;
+    padding: 8px 14px;
+    border-radius: 8px;
+    display: block;
+}
+.nav > .inner > ul li a:hover,
+.nav > .inner > ul li a:focus {
+    color: var(--accent);
+    background: var(--accent-soft);
+}
+.dropdownContent {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    min-width: 180px;
+    box-shadow: 0 12px 24px -8px rgba(15, 23, 42, 0.12);
+    z-index: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 6px;
+    animation: dropdownFade 0.18s ease;
+}
+@keyframes dropdownFade {
+    from { opacity: 0; transform: translateY(-6px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+.dropdownContent li {
+    display: block;
+}
+.dropdownContent li a {
+    color: var(--text);
+    padding: 10px 14px;
+    text-align: left;
+    border-radius: 8px;
+    font-size: 0.92em;
+    font-weight: 500;
+}
+.dropdownContent li a:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+.dropdown:focus-within .dropdownContent {
+    display: block;
+}
+
+/* Hamburger menu toggle (hidden on desktop) */
+.navToggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+    margin-left: auto;
+}
+.navToggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+}
+
+/* Theme switch styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--border);
+    transition: .25s;
+    border-radius: 22px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--surface);
+    transition: .25s;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+input:checked + .slider {
+    background-color: var(--accent);
+}
+input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+@media (max-width: 600px) {
+    .navToggle {
+        display: flex;
+    }
+    .nav > .inner > ul {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 12px;
+        width: 100%;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: 0 12px 24px -8px rgba(15, 23, 42, 0.12);
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 12px;
+        left: 12px;
+        width: auto;
+    }
+    .nav > .inner > ul.open {
+        display: flex;
+    }
+    .nav > .inner > ul li a {
+        padding: 12px 14px;
+    }
+}

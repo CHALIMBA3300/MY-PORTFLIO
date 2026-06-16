@@ -1,0 +1,201 @@
+/* Hero Section */
+.hero {
+    background: var(--bg);
+    padding: 96px 24px 64px;
+    text-align: center;
+}
+.profileImg {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    object-fit: cover;
+    margin-bottom: 24px;
+}
+.heroContent h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+.subtitle {
+    font-size: 1.15em;
+    font-weight: 400;
+    margin-top: 10px;
+    color: var(--text-muted);
+}
+
+/* Card style for sections */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin: 24px auto;
+    max-width: 800px;
+    padding: 40px 32px;
+}
+.card h2 {
+    font-size: 1.6em;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+    padding-left: 16px;
+    border-left: 4px solid var(--accent);
+}
+
+/* Skills grid */
+.skillsGrid {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.skillsGrid > div {
+    flex: 1 1 200px;
+    min-width: 180px;
+}
+.skillsGrid h3 {
+    margin-top: 0;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+}
+.skillsGrid ul {
+    padding-left: 18px;
+    color: var(--text);
+}
+
+/* UI/UX Gallery */
+.uiuxGallery {
+    margin-top: 24px;
+}
+.uiuxGallery h4 {
+    margin-bottom: 12px;
+    color: var(--accent);
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.uiuxScreenshots {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.uiuxScreenshots img {
+    width: 90px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: transform 0.15s, border-color 0.15s;
+    background: var(--surface);
+    cursor: pointer;
+}
+.uiuxScreenshots img:hover {
+    transform: scale(1.05);
+    border-color: var(--accent);
+}
+
+/* Projects Section */
+.projectsGrid {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+.projectsGrid > div {
+    flex: 1 1 250px;
+    min-width: 220px;
+}
+.projectsGrid h3 {
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+}
+.projectList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.projectList li {
+    margin-bottom: 16px;
+}
+.projectTitle {
+    font-weight: 600;
+    color: var(--text);
+    display: block;
+    margin-bottom: 2px;
+}
+.projectDesc {
+    font-size: 0.95em;
+    margin: 0 0 6px 0;
+    color: var(--text-muted);
+}
+.projectLink {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.92em;
+    font-weight: 600;
+}
+.projectLink:hover {
+    text-decoration: underline;
+}
+
+.contactNote {
+    text-align: center;
+    margin-top: 16px;
+    color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    text-align: center;
+    padding: 32px 10px;
+    margin-top: 24px;
+    font-size: 0.92em;
+}
+.footerLink {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: 500;
+    transition: color 0.15s;
+}
+.footerLink:hover {
+    color: var(--accent);
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+    .skillsGrid,
+    .projectsGrid {
+        flex-direction: column;
+        gap: 18px;
+    }
+}
+@media (max-width: 600px) {
+    .hero {
+        padding: 64px 20px 40px;
+    }
+    .heroContent h1 {
+        font-size: 2em;
+    }
+    .card {
+        padding: 24px 20px;
+        margin: 16px 4px;
+        max-width: 98vw;
+    }
+    .uiuxScreenshots img {
+        width: 70px;
+        height: 46px;
+    }
+}

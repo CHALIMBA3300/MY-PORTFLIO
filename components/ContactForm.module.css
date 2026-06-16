@@ -1,0 +1,39 @@
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 420px;
+    margin: 0 auto;
+}
+.contactForm input,
+.contactForm textarea {
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 1em;
+    font-family: inherit;
+    background: var(--bg);
+    color: var(--text);
+    resize: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+.contactForm input:focus,
+.contactForm textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.contactForm button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.contactForm button:hover {
+    background: var(--accent-hover);
+}

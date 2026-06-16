@@ -1,0 +1,11 @@
+.greeting {
+    display: inline-block;
+    margin: 0 0 16px;
+    padding: 6px 14px;
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+}
