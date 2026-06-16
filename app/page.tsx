@@ -5,6 +5,8 @@ import ScrollFade from "@/components/ScrollFade";
 import ContactForm from "@/components/ContactForm";
 import styles from "./page.module.css";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export default function Home() {
   return (
     <>
@@ -12,7 +14,7 @@ export default function Home() {
       <ScrollFade as="header" className={styles.hero}>
         <div className={styles.heroContent}>
           <Image
-            src="/profile.jpg"
+            src={`${basePath}/profile.jpg`}
             alt="Charles Chalimba"
             width={810}
             height={1080}
@@ -29,8 +31,8 @@ export default function Home() {
         <p>
           Charles Chalimba is a website developer, UI/UX designer, and entrepreneur with a passion
           for creating meaningful digital experiences. A graduate of Zambia University College of
-          Technology, i combines technical expertise with creative problem-solving to build
-          user-centered products. As the founder of Graphic Gold,  i bring the same innovation and
+          Technology, he combines technical expertise with creative problem-solving to build
+          user-centered products. As the founder of Graphic Gold, he brings the same innovation and
           attention to detail into the fashion space. Charles is known for his curiosity,
           adaptability, and commitment to continuous growth, both professionally and personally.
         </p>
@@ -121,10 +123,10 @@ export default function Home() {
             <div className={styles.uiuxGallery}>
               <h4>Design Samples</h4>
               <div className={styles.uiuxScreenshots}>
-                <Image src="/resturant.png" alt="UI/UX Screenshot 1" width={542} height={898} />
-                <Image src="/museum.png" alt="UI/UX Screenshot 2" width={1918} height={967} />
-                <Image src="/fashion.png" alt="UI/UX Screenshot 3" width={1882} height={972} />
-                <Image src="/bookworm.png" alt="UI/UX Screenshot 4" width={575} height={890} />
+                <Image src={`${basePath}/resturant.png`} alt="UI/UX Screenshot 1" width={542} height={898} />
+                <Image src={`${basePath}/museum.png`} alt="UI/UX Screenshot 2" width={1918} height={967} />
+                <Image src={`${basePath}/fashion.png`} alt="UI/UX Screenshot 3" width={1882} height={972} />
+                <Image src={`${basePath}/bookworm.png`} alt="UI/UX Screenshot 4" width={575} height={890} />
               </div>
             </div>
           </div>
