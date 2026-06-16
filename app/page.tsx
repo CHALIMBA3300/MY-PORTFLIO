@@ -29,8 +29,8 @@ export default function Home() {
         <p>
           Charles Chalimba is a website developer, UI/UX designer, and entrepreneur with a passion
           for creating meaningful digital experiences. A graduate of Zambia University College of
-          Technology, he combines technical expertise with creative problem-solving to build
-          user-centered products. As the founder of Graphic Gold, he brings the same innovation and
+          Technology, i combines technical expertise with creative problem-solving to build
+          user-centered products. As the founder of Graphic Gold,  i bring the same innovation and
           attention to detail into the fashion space. Charles is known for his curiosity,
           adaptability, and commitment to continuous growth, both professionally and personally.
         </p>
