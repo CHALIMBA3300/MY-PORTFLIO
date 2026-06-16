@@ -14,6 +14,8 @@ nav {
     top: 0;
     width: 100%;
     z-index: 100;
+    display: flex;
+    align-items: center;
 }
 nav ul {
     list-style: none;
@@ -75,6 +77,26 @@ nav ul li a:focus {
 .dropdown:hover .dropdown-content,
 .dropdown:focus-within .dropdown-content {
     display: block;
+}
+
+/* Hamburger menu toggle (hidden on desktop) */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-left: auto;
+}
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
 }
 
 /* Theme switch styles */
@@ -436,11 +458,23 @@ body.dark-mode .screenshot-modal {
     }
 }
 @media (max-width: 600px) {
+    .nav-toggle {
+        display: flex;
+    }
     nav ul {
+        display: none;
         flex-direction: column;
         align-items: flex-end;
         gap: 10px;
-        padding: 0 10px 0 0;
+        padding: 10px 10px 10px 0;
+        width: 100%;
+        background: #005792;
+        position: absolute;
+        top: 100%;
+        right: 0;
+    }
+    nav ul.open {
+        display: flex;
     }
     .hero {
         padding: 30px 0 18px 0;

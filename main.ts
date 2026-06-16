@@ -41,10 +41,30 @@ function enableScreenshotModal() {
 // Scroll fade-in effect for sections
 // (Removed duplicate implementation of enableScrollFade)
 
+// Toggle the mobile nav menu open/closed and close it on link click
+function enableMobileNavToggle() {
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    if (!navToggle || !navMenu) return;
+
+    navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     setGreeting();
     handleContactFormSubmission();
     enableScreenshotModal();
+    enableMobileNavToggle();
 
     // Theme toggle switch logic
     const themeSwitch = document.getElementById('theme-switch') as HTMLInputElement | null;

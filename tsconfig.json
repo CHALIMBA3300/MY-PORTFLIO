@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "strict": true,
+    "noEmit": false
+  },
+  "include": ["main.ts"]
+}
